@@ -39,9 +39,13 @@ def update(game,items,current,response):
             return e["target"]
     return current
 
+
+
+
 # The main function for the game
 def main():
     current = 'WHOUS'  # The starting location
+    end_game = ['END']  # Any of the end-game locations
 
     (game,items) = load_files()
 

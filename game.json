@@ -1,130 +1,131 @@
 {
 	"START": {
-		"name": "TREELINE",
-		"desc": "Your eyes open to the blazing sun. You wince and shut them immediately. As you open your eyes again, you realize you are laying just in the treeline of a jungle. Looking out, you notice a beach lays before you to the north.",
+		"name": "Your bedroom upstairs",
+		"desc": "You close your eyes after a stressful day of school and end up falling asleep. You realize you're subconsciously wondering around your home in a dream and you feel like there's someone present in the house that's not welcomed there with you. You decide you're going to escape this dream as fast as possible because it's giving you the serious case of heebie-jeebies.",
 		"exits": [{
 				"exit": "NORTH",
-				"target": "NBEACH"
+				"target": "BATHROOM"
 		}, {
 				"exit": "SOUTH",
-				"target": "SJUNGLE"
+				"target": "CLOSET"
 		}],
 		"items": []
 	},
 
-	"NBEACH": {
-		"name": "North Beach",
-		"desc": "There is nothing in sight besides waves. On the ground, you see a bottle with a message inside.",
+	"BATHROOM": {
+		"name": "Bathroom",
+		"desc": "You head down to the other side of the hall into the bathroom to find anything that can be used as a weapon.",
 		"exits": [
 			{
 				"exit": "SOUTH",
-				"target": "SJUNGLE"
+				"target": "CLOSET"
 			}],
 		"items": [{
-			"item": "BOTTLE",
-			"desc": "The bottle lays at your feet. Will you take the bottle or leave it?",
-			"take": "You pick up the bottle."
+			"item": "HAIR TRIMMING SCISSORS",
+			"desc": "You open the cabinet located under the bathroom sink and find a pair of hair trimming scissors. I suggest you take them and use them as a weapon!",
+			"take": "You take the hair trimming scissors."
 		}]
 	},
 
-	"SJUNGLE": {
-		"name": "The Jungle",
-		"desc": "The jungle is dark and dense. There is one tree that seems to stand taller than the other, perfect for climbing.",
+	"CLOSET": {
+		"name": "The upstairs closet",
+		"desc": "Well... shit. You stab yourself in the hand trying to put the scissors away in your tiny jean pocket. You go to the closet to find a band-aid.",
 		"exits": [
 			{
-				"exit": "CLIMB",
-				"target": "TREETOP"
+				"exit": "WEST",
+				"target": "BROTHERSROOM"
 			}, {
 				"exit": "SOUTH",
-				"target": "DEEPJUNGLE"
-			}, {
-				"exit": "EAST",
-				"target": "FALL"
+				"target": "STAIRS"
 			}, {
 				"exit": "WEST",
-				"target": "CLEARING"
+				"target": "PARENTSROOM"
+			}, {
+				"exit": "EAST",
+				"target": "LAUNDRYROOM"
 		}],
-		"items": []
+		"items": [{
+			"item": "BAND-AID",
+			"desc": "You open the skinny closet door and rummage through a basket full of medical supplies. You find the band-aid you were looking for.",
+			"take": "You take the band-aid and put it over your stupid stab wound."
+		}]
 	},
 
-	"TREETOP": {
-		"name": "At the top of the tree",
-		"desc": "The wind blows strong, and the sun looms over head. As you look around, you realize you are on a small isalnd. Water lies in every direction with nothing in sight. To the east you see a waterfall leading to a pool of water. To the west you see a clearing in the trees.",
+	"BROTHERSROOM": {
+		"name": "On the other side of your bedroom",
+		"desc": "As you look around the dark room for any potential danger, you hear a loud bang coming from the other side of your brothers wall. You begin to understand that the noise is coming from your room! You quickly decide to go to a different floor of the house in hopes of avoiding this scary stranger!",
 		"exits": [
 			{
 				"exit": "DOWN",
-				"target": "SJUNGLE"
+				"target": "STAIRS"
 		}],
 		"items": []
 	},
 	
-	"DEEPJUNGLE": {
-		"name": "Deep in the dark jungle",
-		"desc": "It is darker here. Suddenly you hear a rustle in the leaves, a twig snaps. A large, black, hairy, head appears and then a jaguar emerges with a low growl. You see a sword on the ground.",
+	"STAIRS": {
+		"name": "Squeeky staircase",
+		"desc": "Of course, the decision to go downstairs is about to backfire! This unwelcomed guest is going to figure out your exact location by hearing the creeks of the stairs. What do you do?",
 		"exits": [
 			{
-				"exit": "RUN",
-				"target": "SJUNGLE"
+				"exit": "TIPTOE",
+				"target": "KITCHEN"
 			}, {
-				"exit": "NORTH",
-				"target": "SJUNGLE" 
+				"exit": "RUN",
+				"target": "START" 
 		}],
-		"items": [{
-			"item": "SWORD",
-			"desc": "You pick up the sword to face the jaguar, but you should know better than to face a wild beast. It attacks."
-		}]
+		"items": []
 	},
 
-	"FALL": {
-		"name": "A waterfall dropping into a deep pool",
-		"desc": "At the bottom of the pool you think you seem something shining.",
+	"KITCHEN": {
+		"name": "Kitchen",
+		"desc": "You arrive in the kitchen and notice things have been moved around. It looks as if someone was looking for something. Luckily, you're not staying long enough to find out what it is!",
 		"exits": [
 			{
-				"exit": "SWIM",
-				"target": "LIGHT"
+				"exit": "EAST",
+				"target": "LAUNDRYROOM"
 			}, {
 				"exit": "WEST",
-				"target": "SJUNGLE"
+				"target": "PARENTSROOM"
 		}],
 		"items": []
 	},
 
-	"CLEARING": {
-		"name": "An empty clearing, or so it seems",
-		"desc": "Across the clearing an old man dressed in a raggy cloak steps out of the shadows. He approaches you. When he speaks, he asks if you have brought it.",
+	"LAUNDRYROOM": {
+		"name": "Your least favorite part of the house. Laundry is almost compareable to death.",
+		"desc": "You search for something that can be used to help you escape from this nightmare but being in this room is only going to waste your time.",
 		"exits": [
 			{
-				"exit": "YES",
-				"target": "CLOUDS"
+				"exit": "WEST",
+				"target": "PARENTSROOM"
 			}, {
-				"exit": "NO",
+				"exit": "SOUTH",
 				"target": "SJUNGLE"
 		}],
 		"items": []
 	},
 
-	"LIGHT": {
-		"name": "The bottom of the pool",
-		"desc": "Through the crystl clear water you see an crystal rock, glowing.",
+	"PARENTSROOM": {
+		"name": "The biggest room in the house.",
+		"desc": "You know there's a landline located in here. Why? Because moms and dads are boomers.",
 		"exits": [
 			{
-				"exit": "UP",
-				"target": "FALL"
+				"exit": "AWAKE",
+				"target": "AWAKE"
 		}],
 		"items": [{
-			"item": "ROCK",
-			"desc": "You pick up the rock, and it continues to glow but nothing seems happens. Will you take the rock or leave it?",
-			"take": "You keep the glowing rock."
+			"item": "PHONE",
+			"desc": "You pick up the phone, and so far, it looks like it works! Do you risk dailing the phone?",
+			"take": "You dial the phone in hopes of returning to reality."
 		}]
 	},
 
-	"CLOUDS": {
-		"name": "High in the sky amidst the clouds",
-		"desc": "Suddenly, as if by magic, you find yourself floating among the clouds. The man from the clearing appears in front of you. He says you have earned the truth of the island. You are here today, like many before you, because you have to a turning point in life. Death has come, but by accepting your fate and the challenge of the island, you have proved you are ready to move on to your next life cycle. Once leaving this place your new life will begin. Until we meet again, live well.",
+	"AWAKE": {
+		"name": "Back to reality",
+		"desc": "You finally wake up from your so called terrible dream. Maybe you'll think twice next time before procrastinating your homework, mwhaha.",
 		"exits": [
 			{
 				"exit": "",
-				"target": "BLACK:"
+				"target": "END"
 			}],
 			"items": []
 	}

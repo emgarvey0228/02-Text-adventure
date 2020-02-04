@@ -59,7 +59,7 @@ def render(game,items,current,moves,points):
         print(e["exit"].lower())
 
 def get_input():
-    response = input("\nWhat do you want to do? ")
+    response = input("\nWhat do you want to do?")
     response = response.upper().strip()
     return response
 
@@ -110,7 +110,7 @@ def update(game,items,current,response):
 # The main function for the game
 def main():
     current = 'START'  # The starting location
-    end_game = ['BLACK']  # Any of the end-game locations
+    end_game = ['END']  # Any of the end-game locations
     points = 0
     moves = 0
 
@@ -130,7 +130,7 @@ def main():
         moves += 1
         points = calculate_points(items)
 
-    print("I hope you enjoyed playing! See you next time.")
+    print("Thanks for playing!")
     print("You scored {} points in {} moves.".format(points,moves))
 
 # run the main function

@@ -1,25 +1,25 @@
 {
-   "BOTTLE": {
+   "HAIR TRIMMING SCISSORS": {
        "exits": {
-           "FALL": "The bottle in your pocket becomes icy cold."
+           "put away": "The scissors are surprisingly sharp!"
        },
        "actions": {
-           "read": "You have one day to discover the truth of the island. It is the only way to stay alive."
+           "read": "You have these scissors to use in case of an emergency."
+       },
+       "points": 2
+   },
+   "BAIND-AID": {
+       "exits": {},
+       "actions": {
+           "place": "You place the band-aid on your wound."
        },
        "points": 1
    },
-   "ROCK": {
+   "PHONE": {
        "exits": {},
        "actions": {
-           "hold": "You feel a hum run through you."
+           "dial": "You dial the phone and wake up in reality!"
        },
        "points": 10
-   },
-   "SWORD": {
-       "exits": {},
-       "actions": {
-           "fight": "You wield the sword over your head to protect against the attack, and somehow you are able to take down the jaguar."
-       },
-       "points": 1
    }
 }

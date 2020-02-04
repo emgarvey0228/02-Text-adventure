@@ -1,42 +1,131 @@
 {
-	"IMU": {
-		"name": "How exactly do you get out of here?",
-		"desc": "Today on Friday, July 13th, your worst nightmare happens. You're trapped inside the Indiana Memorial Union during your summer vacation! You need to escape this hell before you waste this perfectly good Friday.",
+	"START": {
+		"name": "TREELINE",
+		"desc": "Your eyes open to the blazing sun. You wince and shut them immediately. As you open your eyes again, you realize you are laying just in the treeline of a jungle. Looking out, you notice a beach lays before you to the north.",
 		"exits": [{
-			"exit": "BOOKSTORE",
-			"target": "BOOKSTORE"
+				"exit": "NORTH",
+				"target": "NBEACH"
 		}, {
-			"exit": "COMPUTER LAB",
-			"target": "COMPUTERLAB"
+				"exit": "SOUTH",
+				"target": "SJUNGLE"
 		}],
-        "items": []
-    }
-{ 
-    "BOOKSTORE": {
-		"name": "Indiana University's Bookstore",
-		"desc": "You're standing in the empty bookstore, lost more now than ever. Where do you go next?",
-		"exits": [{
-			"exit": "COMPUTER LAB",
-			"target": "COMPUTERLAB"
-		}, {
-			"exit": "BILLARDS",
-			"target": "BILLARDS"
-		}, {
-			"exit": "BOWLING ALLEY",
-			"target": "BOWLINGALLEY"
+		"items": []
+	},
+
+	"NBEACH": {
+		"name": "North Beach",
+		"desc": "There is nothing in sight besides waves. On the ground, you see a bottle with a message inside.",
+		"exits": [
+			{
+				"exit": "SOUTH",
+				"target": "SJUNGLE"
+			}],
+		"items": [{
+			"item": "BOTTLE",
+			"desc": "The bottle lays at your feet. Will you take the bottle or leave it?",
+			"take": "You pick up the bottle."
+		}]
+	},
+
+	"SJUNGLE": {
+		"name": "The Jungle",
+		"desc": "The jungle is dark and dense. There is one tree that seems to stand taller than the other, perfect for climbing.",
+		"exits": [
+			{
+				"exit": "CLIMB",
+				"target": "TREETOP"
+			}, {
+				"exit": "SOUTH",
+				"target": "DEEPJUNGLE"
+			}, {
+				"exit": "EAST",
+				"target": "FALL"
+			}, {
+				"exit": "WEST",
+				"target": "CLEARING"
 		}],
-        "items": []
-    }
-{
-    "COMPUTERLAB": {
-            "name": "Computer Lab",
-            "desc": "Ah, of course. The Computer Lab. I'm starting to think you don't want to go home.",
-            "exits": [{
-                "exit": "BILLARDS",
-                "target": "BILLARDS"
-            }, {
-                "exit": "COMPUTER LAB",
-                "target": "COMPUTERLAB"
-            }],
-            "items": []
-            }
+		"items": []
+	},
+
+	"TREETOP": {
+		"name": "At the top of the tree",
+		"desc": "The wind blows strong, and the sun looms over head. As you look around, you realize you are on a small isalnd. Water lies in every direction with nothing in sight. To the east you see a waterfall leading to a pool of water. To the west you see a clearing in the trees.",
+		"exits": [
+			{
+				"exit": "DOWN",
+				"target": "SJUNGLE"
+		}],
+		"items": []
+	},
+	
+	"DEEPJUNGLE": {
+		"name": "Deep in the dark jungle",
+		"desc": "It is darker here. Suddenly you hear a rustle in the leaves, a twig snaps. A large, black, hairy, head appears and then a jaguar emerges with a low growl. You see a sword on the ground.",
+		"exits": [
+			{
+				"exit": "RUN",
+				"target": "SJUNGLE"
+			}, {
+				"exit": "NORTH",
+				"target": "SJUNGLE" 
+		}],
+		"items": [{
+			"item": "SWORD",
+			"desc": "You pick up the sword to face the jaguar, but you should know better than to face a wild beast. It attacks."
+		}]
+	},
+
+	"FALL": {
+		"name": "A waterfall dropping into a deep pool",
+		"desc": "At the bottom of the pool you think you seem something shining.",
+		"exits": [
+			{
+				"exit": "SWIM",
+				"target": "LIGHT"
+			}, {
+				"exit": "WEST",
+				"target": "SJUNGLE"
+		}],
+		"items": []
+	},
+
+	"CLEARING": {
+		"name": "An empty clearing, or so it seems",
+		"desc": "Across the clearing an old man dressed in a raggy cloak steps out of the shadows. He approaches you. When he speaks, he asks if you have brought it.",
+		"exits": [
+			{
+				"exit": "YES",
+				"target": "CLOUDS"
+			}, {
+				"exit": "NO",
+				"target": "SJUNGLE"
+		}],
+		"items": []
+	},
+
+	"LIGHT": {
+		"name": "The bottom of the pool",
+		"desc": "Through the crystl clear water you see an crystal rock, glowing.",
+		"exits": [
+			{
+				"exit": "UP",
+				"target": "FALL"
+		}],
+		"items": [{
+			"item": "ROCK",
+			"desc": "You pick up the rock, and it continues to glow but nothing seems happens. Will you take the rock or leave it?",
+			"take": "You keep the glowing rock."
+		}]
+	},
+
+	"CLOUDS": {
+		"name": "High in the sky amidst the clouds",
+		"desc": "Suddenly, as if by magic, you find yourself floating among the clouds. The man from the clearing appears in front of you. He says you have earned the truth of the island. You are here today, like many before you, because you have to a turning point in life. Death has come, but by accepting your fate and the challenge of the island, you have proved you are ready to move on to your next life cycle. Once leaving this place your new life will begin. Until we meet again, live well.",
+		"exits": [
+			{
+				"exit": "",
+				"target": "BLACK:"
+			}],
+			"items": []
+	}
+}

@@ -1,16 +1,25 @@
 {
-    "NEWSPAPER": {
-       "exits": {},
+   "BOTTLE": {
+       "exits": {
+           "FALL": "The bottle in your pocket becomes icy cold."
+       },
        "actions": {
-          "READ": "Hi, welcome to your own personal hell! You were put here because we noticed you decide to skip class last week and we felt you deserved it. Good luck escaping mwhaha!"
+           "read": "You have one day to discover the truth of the island. It is the only way to stay alive."
        },
        "points": 1
-    },
-    "SWORD": {
-       "exits": {
-          "CELLA": "The sword glows with a faint blue glow!"
+   },
+   "ROCK": {
+       "exits": {},
+       "actions": {
+           "hold": "You feel a hum run through you."
        },
-       "actions": {},
        "points": 10
-    }
- }
+   },
+   "SWORD": {
+       "exits": {},
+       "actions": {
+           "fight": "You wield the sword over your head to protect against the attack, and somehow you are able to take down the jaguar."
+       },
+       "points": 1
+   }
+}

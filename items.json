@@ -1,8 +1,8 @@
 {
-    "PAMPHLET": {
+    "NEWSPAPER": {
        "exits": {},
        "actions": {
-          "read": "The pamphlet says, Welcome to Zork!"
+          "READ": "Hi, welcome to your own personal hell! You were put here because we noticed you decide to skip class last week and we felt you deserved it. Good luck escaping mwhaha!"
        },
        "points": 1
     },

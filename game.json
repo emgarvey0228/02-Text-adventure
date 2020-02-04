@@ -1,0 +1,42 @@
+{
+	"IMU": {
+		"name": "How exactly do you get out of here?",
+		"desc": "Today on Friday, July 13th, your worst nightmare happens. You're trapped inside the Indiana Memorial Union during your summer vacation! You need to escape this hell before you waste this perfectly good Friday.",
+		"exits": [{
+			"exit": "BOOKSTORE",
+			"target": "BOOKSTORE"
+		}, {
+			"exit": "COMPUTER LAB",
+			"target": "COMPUTERLAB"
+		}],
+        "items": []
+    }
+{ 
+    "BOOKSTORE": {
+		"name": "Indiana University's Bookstore",
+		"desc": "You're standing in the empty bookstore, lost more now than ever. Where do you go next?",
+		"exits": [{
+			"exit": "COMPUTER LAB",
+			"target": "COMPUTERLAB"
+		}, {
+			"exit": "BILLARDS",
+			"target": "BILLARDS"
+		}, {
+			"exit": "BOWLING ALLEY",
+			"target": "BOWLINGALLEY"
+		}],
+        "items": []
+    }
+{
+    "COMPUTERLAB": {
+            "name": "Computer Lab",
+            "desc": "Ah, of course. The Computer Lab. I'm starting to think you don't want to go home.",
+            "exits": [{
+                "exit": "BILLARDS",
+                "target": "BILLARDS"
+            }, {
+                "exit": "COMPUTER LAB",
+                "target": "COMPUTERLAB"
+            }],
+            "items": []
+            }

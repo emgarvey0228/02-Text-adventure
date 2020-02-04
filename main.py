@@ -108,7 +108,7 @@ def update(game,items,current,response):
 
 # The main function for the game
 def main():
-    current = 'WHOUS'  # The starting location
+    current = 'IMU'  # The starting location
     end_game = ['END']  # Any of the end-game locations
     moves = 0
     points = 0
@@ -119,6 +119,9 @@ def main():
     
     while True:
         render(game,items,current,moves,points)
+        if current in end_game:
+            break
+
         response = get_input()
         
         if response == "QUIT":

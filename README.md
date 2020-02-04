@@ -5,4 +5,4 @@ I did my very best to follow the step- by- step instructions created by my instr
 
 To play: run main.py in Python. 
 
-Good luck esccaping and waking up!
+Good luck trying to get back into reality!

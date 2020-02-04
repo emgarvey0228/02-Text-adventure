@@ -4,11 +4,11 @@ import sys, os, json
 assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
 # The game and item description files (in the same folder as this script)
-game_file = 'zork.json'
+game_file = 'game.json'
 item_file = 'items.json'
-inventory = [""]
-points = 0
-moves = 0
+inventory = []
+
+
 
 # Load the contents of the files into the game and items dictionaries. You can largely ignore this
 # Sorry it's messy, I'm trying to account for any potential craziness with the file location
@@ -23,26 +23,40 @@ def load_files():
         os._exit(1)
 
 
-
-
 def check_inventory(item):
     for i in inventory:
         if i == item:
             return True
-        return False
+    return False
 
+def calculate_points(items):
+    points = 0
+    for i in inventory:
+        if i in items:
+            points += items[i]["points"]
+    return points
 
 def render (game,items,current,moves,points):
     c = game [current]
-    print ("\n\n{} Moves\t{} Points".format(moves,points))
+    print ("\n\n{} Moves\t\t\t\t{} Points".format(moves,points))
     print("\n\nYou are at the " + c["name"])
     print(c["desc"])
 
     #display any items
-    for i in c ["items"]:
-        if not check_inventory(i("item")):
-            print(i["desc"])
+    for item in c ["items"]:
+        if not check_inventory(item("item")):
+            print(item["desc"])
+    
+    
+    #display item information
+    for i in inventory:
+        if i in items:
+            if current in items[i]["exits"]:
+                print(items[i]["exits"][current])
 
+    print("\nAvailable exits: ")
+    for e in c["exits"]:
+        print(e["exit"].lower())
 
 def get_input():
     response = input ("What would you like to do?")
@@ -51,11 +65,10 @@ def get_input():
 
 
 
-
 def update(game,items,current,response):
     if response == "INVENTORY":
         print ("You are carrying:")
-        if not len(inventory) == 0:
+        if len(inventory) == 0:
             print ("Nothing")
         else:
             for i in inventory:
@@ -65,14 +78,28 @@ def update(game,items,current,response):
     c = game [current]
     for e in c["exits"]:
         if response == e["exit"]:
-            moves += 1
             return e["target"]
     
     for i in c ["items"]:
-        if response == "GET" + i["item"] and not check_inventory (i["item"]):
-            print (i["take"])
-            inventory.append(i["item"])
+        if response == "GET" + item["item"] and not check_inventory (item["item"]):
+            print (item["take"])
+            inventory.append(item["item"])
             return current
+    
+    for i in inventory:
+        if i in items:
+            for action in items[i]["actions"]:
+                if response == action + " " + i:
+                    print(items[i]["actions"][action])
+                    return current
+        
+    
+    if response[0:3] == "GET":
+        print("You can't take that!")
+    elif response in ["NORTH","SOUTH","EAST","WEST","NORTHWEST","NORTHEAST","SOUTHWEST","SOUTHEAST","UP","DOWN"]:
+        print("You can't go that way!")
+    else:
+        print("I don't understand what you're trying to do")
      
     return current
 
@@ -83,22 +110,27 @@ def update(game,items,current,response):
 def main():
     current = 'WHOUS'  # The starting location
     end_game = ['END']  # Any of the end-game locations
+    moves = 0
+    points = 0
 
     (game,items) = load_files()
 
     
     
     while True:
-        render(game,items,current)
+        render(game,items,current,moves,points)
         response = get_input()
         
         if response == "QUIT":
             break
 
         current = update (game,items,current,response)
+        moves += 1
+        points = calculate_points()
         
     print("Thanks for playing!")
     print ("You scored {} points in {} moves".format(points,moves))
+
 # run the main function
 if __name__ == '__main__':
 	main()

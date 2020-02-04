@@ -99,7 +99,7 @@
 				"target": "PARENTSROOM"
 			}, {
 				"exit": "SOUTH",
-				"target": "SJUNGLE"
+				"target": "KITCHEN"
 		}],
 		"items": []
 	},
